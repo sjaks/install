@@ -1,0 +1,17 @@
+"*":
+  core:
+    audioBeep: false
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+    themes: [
+      "solarized-one-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    fontFamily: "Ubuntu Mono"
+    fontSize: 16
+    scrollPastEnd: true
+    showIndentGuide: true
+    tabLength: 4
+  welcome:
+    showOnStartup: false
