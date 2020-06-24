@@ -94,6 +94,7 @@ gitg \
 gedit-plugins \
 rsync \
 entr \
+ncdu \
 virtualbox \
 virtualbox-dkms \
 vagrant \
