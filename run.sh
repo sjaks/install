@@ -79,6 +79,7 @@ idn \
 texlive-full \
 texlive-lang-european \
 poedit \
+influxdb-client \
 gcc \
 build-essential \
 python3 \
