@@ -92,6 +92,7 @@ qt5-default \
 qtcreator \
 octave \
 gitg \
+moreutils \
 gedit-plugins \
 rsync \
 entr \
