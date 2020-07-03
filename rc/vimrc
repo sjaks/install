@@ -36,6 +36,7 @@ set shiftwidth=4
 set number
 syntax on
 filetype off
+set colorcolumn=80
 
 
 
