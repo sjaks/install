@@ -238,10 +238,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall > /dev/null
 
 # Copy keys
-cp /media/sami/key/edid /home/sami/.ssh/edid
-chmod 600 /home/sami/.ssh/edid
-ssh-add /home/sami/.ssh/edid
-gpg --import /media/sami/key/pgp.asc
+cp /media/sami/key/edid /home/sami/.ssh/id_ed25519
+chmod 600 /home/sami/.ssh/id_ed25519
+ssh-add /home/sami/.ssh/id_ed25519
 
 # Remove temporary files
 rm -rf /home/sami/.cache/*
