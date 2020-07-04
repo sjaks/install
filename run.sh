@@ -14,6 +14,21 @@
 
 # INITIALIZE INSTALLATION
 
+# Define Nord colors
+nord0="#2E3440"
+nord1="#3B4252"
+nord3="#4C566A"
+nord4="#D8DEE9"
+nord5="#E5E9F0"
+nord6="#ECEFF4"
+nord7="#8FBCBB"
+nord8="#88C0D0"
+nord9="#81A1C1"
+nord11="#BF616A"
+nord13="#EBCB8B"
+nord14="#A3BE8C"
+nord15="#B48EAD"
+
 # Reload all dconf settings
 dconf reset -f /
 
@@ -54,7 +69,7 @@ traceroute \
 nmap \
 whois \
 idn \
-texlive-full \
+texlive-latex-recommended \
 texlive-lang-european \
 poedit \
 influxdb-client \
@@ -62,6 +77,7 @@ gcc \
 build-essential \
 python3 \
 python3-pip \
+flake8 \
 ruby-dev \
 php \
 nodejs \
@@ -132,7 +148,11 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 # SET APPEARANCE SETTINGS
 
 # Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+wget https://github.com/EliverLara/Nordic/releases/download/v1.9.0/Nordic-darker.tar.xz
+mkdir /home/sami/.themes
+tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
+rm Nordic-darker.tar.xz
+gsettings set org.gnome.desktop.interface gtk-theme 'Nordic-darker'
 
 # Set dock settings
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
@@ -159,7 +179,7 @@ profile=${profile:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors true
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#2E3436', '#CC0000', '#4E9A06', '#C4A000', '#3465A4', '#75507B', '#06989A', '#D3D7CF', '#555753', '#EF2929', '#8AE234', '#FCE94F', '#729FCF', '#AD7FA8', '#34E2E2', '#EEEEEC']"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['$nord1', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord8', '$nord5', '$nord3', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord7', '$nord6']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 
 
