@@ -12,28 +12,6 @@
 
 
 
-# CHECK SYSTEM ELIGIBILITY
-
-# Check whether the system is running Ubuntu
-distro=$(hostnamectl | grep "Operating System" | awk '{print $3; }')
-if [ "$distro" != "Ubuntu" ] ; then
-	echo ""
-	echo "This script can only be run on Ubuntu. Halting."
-	echo ""
-	exit 1
-fi
-
-# Check whether the system is running Gnome
-if [ $(dpkg-query -W -f='${Status}' gnome-terminal 2>/dev/null | grep -c "ok installed") -eq 0 ] ; then
-	echo ""
-	echo "System is not running Gnome. Halting."
-	echo ""
-	exit 1
-fi
-
-
-
-
 # INITIALIZE INSTALLATION
 
 # Reload all dconf settings
@@ -50,7 +28,7 @@ sudo apt -y -q dist-upgrade
 
 
 
-# INSTALL PACKAGES
+# CONFIGURE PACKAGES
 
 # Install packages with apt
 sudo apt -y -q install \
@@ -126,35 +104,8 @@ if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "
 	rm google-chrome-stable_current_amd64.deb
 fi
 
-if [ $(dpkg-query -W -f='${Status}' atom 2>/dev/null | grep -c "ok installed") -eq 0 ] ; then
-	# Fetch the Atom binary and install it together with its dependencies
-	wget -O atom.deb https://atom.io/download/deb
-	sudo dpkg -i atom.deb
-	sudo apt -y install -f
-	rm atom.deb
-fi
-
-# Install atom extensions
-apm install solarized-one-light-ui # ui theme
-apm install atom-file-icons
-apm install busy-signal
-apm install ide-html
-apm install ide-python
-apm install intentions
-apm install javascript-snippets
-apm install linter
-apm install linter-phpcs
-apm install linter-ui-default
-apm install php-integrator-autocomplete-plus
-apm install pp-markdown
-
 # Install vagrant plugins
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
-
-
-
-
-# REMOVE PREINSTALLED PACKAGES
 
 # Remove Mozilla packages and default Gnome games
 sudo apt -y remove firefox thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
@@ -195,22 +146,20 @@ gsettings set org.gnome.shell.extensions.desktop-icons show-home false
 gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
 
 # Set wallpaper
-ln -sf /home/sami/install/pic/wallpaper.jpg /home/sami/.wallpaper.jpg
+ln -sf /home/sami/.files/pic/wallpaper.jpg /home/sami/.wallpaper.jpg
 gsettings set org.gnome.desktop.background picture-uri 'file:///home/sami/.wallpaper.jpg'
 gsettings set org.gnome.desktop.screensaver picture-uri 'file:///home/sami/.wallpaper.jpg'
 
 # Set avatar
-ln -sf /home/sami/install/pic/avatar.jpg /home/sami/.face
+ln -sf /home/sami/.files/pic/avatar.jpg /home/sami/.face
 
 # Edit Gnome terminal profile
 profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
 profile=${profile:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors false
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" background-color 'rgb(253,246,227)'
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" foreground-color '#657A81'
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(101,123,131)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(147,161,161)']"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors true
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#2E3436', '#CC0000', '#4E9A06', '#C4A000', '#3465A4', '#75507B', '#06989A', '#D3D7CF', '#555753', '#EF2929', '#8AE234', '#FCE94F', '#729FCF', '#AD7FA8', '#34E2E2', '#EEEEEC']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 
 
@@ -259,15 +208,6 @@ gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 # Show battery percentage in Gnome shell
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
-# Set Gedit settings
-gsettings set org.gnome.gedit.preferences.editor display-line-numbers true
-gsettings set org.gnome.gedit.preferences.editor tabs-size 4
-gsettings set org.gnome.gedit.plugins active-plugins "['codecomment', 'bracketcompletion', 'terminal', 'colorpicker', 'docinfo', 'spell', 'filebrowser', 'time', 'quickhighlight', 'modelines', 'drawspaces', 'wordcompletion', 'git']"
-gsettings set org.gnome.gedit.preferences.editor highlight-current-line false
-gsettings set org.gnome.gedit.preferences.editor bracket-matching true
-gsettings set org.gnome.gedit.preferences.editor scheme 'solarized-light'
-gsettings set org.gnome.gedit.preferences.editor auto-indent true
-
 
 
 
@@ -282,19 +222,16 @@ mkdir /home/sami/.ssh
 chown sami /home/sami/.ssh
 chmod 700 /home/sami/.ssh
 
-# Create atom config dir
-mkdir -p /home/sami/.atom
-
 # Fetch and link dotfiles and configs
-ln -sf /home/sami/install/rc/bashrc /home/sami/.bashrc
-ln -sf /home/sami/install/rc/vimrc /home/sami/.vimrc
-ln -sf /home/sami/install/rc/atom /home/sami/.atom/config.cson
-ln -sf /home/sami/install/rc/profile /home/sami/.profile
-ln -sf /home/sami/install/rc/gitconfig /home/sami/.gitconfig
-ln -sf /home/sami/install/rc/hidden /home/sami/.hidden
+ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
+ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
+ln -sf /home/sami/.files/rc/atom /home/sami/.atom/config.cson
+ln -sf /home/sami/.files/rc/profile /home/sami/.profile
+ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
+ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 
 # Fetch new auto update config
-sudo cp /home/sami/install/rc/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
+sudo cp /home/sami/.files/rc/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
 
 # Clone vundle and install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
