@@ -122,7 +122,6 @@ alias digg='dig ANY +noall +answer'
 alias digfi='dig +short all @a.fi'
 alias myip='curl ipinfo.io/ip'
 
-alias sera='~/.serbin/so.sh'
 alias sersync="find * | entr rsync -avz -e 'ssh -q' * wp:/data/wordpress/htdocs/wp-content/mu-plugins/seravo-plugin/"
 
 tailc () { tail $@ | ccze -A ; }
