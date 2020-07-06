@@ -51,6 +51,9 @@ ufw \
 neofetch \
 unzip \
 htop \
+gimp \
+obs-studio \
+shotcut \
 catimg \
 ccze \
 fonts-noto-color-emoji \
@@ -99,18 +102,14 @@ dia \
 audacity \
 hardinfo \
 steam \
+telegram-desktop \
 cowsay
 
 # Install snap packages
 sudo snap install code --classic
-sudo snap install spotify
 sudo snap install slack --classic
-sudo snap install fast
-sudo snap install obs-studio
-sudo snap install telegram-desktop
+sudo snap install spotify
 sudo snap install discord
-sudo snap install glimpse-editor
-sudo snap install shotcut --classic
 
 # Install debs
 if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "ok installed") -eq 0 ] ; then
