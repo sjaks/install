@@ -59,6 +59,7 @@ ccze \
 fonts-noto-color-emoji \
 pavucontrol \
 gnome-tweak-tool \
+papirus-icon-theme \
 rhythmbox \
 mesa-utils \
 vim \
@@ -156,6 +157,7 @@ mkdir /home/sami/.themes
 tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
 rm Nordic-darker.tar.xz
 gsettings set org.gnome.desktop.interface gtk-theme 'Nordic-darker'
+gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 
 # Set dock settings
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
