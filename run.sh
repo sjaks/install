@@ -102,6 +102,7 @@ steam \
 cowsay
 
 # Install snap packages
+sudo snap install code --classic
 sudo snap install spotify
 sudo snap install slack --classic
 sudo snap install fast
@@ -122,6 +123,9 @@ fi
 
 # Install vagrant plugins
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
+
+# Install vscode extensions
+code --install-extension arcticicestudio.nord-visual-studio-code
 
 # Remove Mozilla packages and default Gnome games
 sudo apt -y remove firefox thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
@@ -237,7 +241,8 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 rm -rf /home/sami/Templates
 rm -rf /home/sami/Public
 
-# Create an ssh directory
+# Setup directories
+mkdir -p /home/sami/.config/Code/User/
 mkdir /home/sami/.ssh
 chown sami /home/sami/.ssh
 chmod 700 /home/sami/.ssh
@@ -249,6 +254,7 @@ ln -sf /home/sami/.files/rc/atom /home/sami/.atom/config.cson
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
+ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
 
 # Fetch new auto update config
 sudo cp /home/sami/.files/rc/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
