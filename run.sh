@@ -98,6 +98,8 @@ ncdu \
 virtualbox \
 virtualbox-dkms \
 vagrant \
+docker \
+docker-compose \
 inkscape \
 dia \
 audacity \
@@ -232,6 +234,9 @@ gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true
 
 # Show battery percentage in Gnome shell
 gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+# Add user to docker group
+sudo usermod -aG docker sami
 
 
 
