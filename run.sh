@@ -259,6 +259,7 @@ ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
 ln -sf /home/sami/.files/rc/atom /home/sami/.atom/config.cson
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
+ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
 
