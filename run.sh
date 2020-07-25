@@ -34,6 +34,7 @@ i3status \
 feh \
 dunst \
 network-manager-applet \
+gnome-keyring \
 ufw \
 neofetch \
 unzip \
@@ -148,7 +149,8 @@ sudo usermod -aG docker sami
 # Add systemd config
 echo HandleLidSwitch=lock | sudo tee -a /etc/systemd/logind.conf
 sudo systemctl daemon-reload
-
+sudo systemctl disable systemd-networkd-wait-online
+sudo systemctl mask systemd-networkd-wait-online
 
 # FINAL STEPS
 
