@@ -29,6 +29,7 @@ xinit \
 dmenu \
 i3 \
 i3lock \
+xss-lock \
 i3status \
 network-manager-applet \
 ufw \
