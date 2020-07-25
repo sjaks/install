@@ -6,7 +6,7 @@ set $mod Mod4
 font pango:monospace 8
 
 # use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always xss-lock /home/sami/.files/bin/i3lock.sh
 
 # desktop environment-independent system tray GUI for network-manager
 exec --no-startup-id nm-applet
@@ -30,23 +30,14 @@ bindsym $mod+Shift+q kill
 # start dmenu
 bindsym $mod+d exec dmenu_run
 
-# change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# lock screen
+bindsym $mod+l exec bash /home/sami/.files/bin/i3lock.sh
 
 # alternatively, you can use the cursor keys
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys
 bindsym $mod+Shift+Left move left
