@@ -45,4 +45,6 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
 
-URxvt.internalBorder:  4
+URxvt.internalBorder:  13
+URxvt.scrollBar: false
+URxvt.font: xft:noto mono-11
