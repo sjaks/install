@@ -32,6 +32,7 @@ i3lock \
 xss-lock \
 i3status \
 feh \
+dunst \
 network-manager-applet \
 ufw \
 neofetch \
@@ -43,6 +44,8 @@ obs-studio \
 catimg \
 ccze \
 fonts-noto-color-emoji \
+lxappearance \
+papirus-icon-theme \
 pavucontrol \
 mplayer \
 mpv \
@@ -85,7 +88,10 @@ inkscape \
 dia \
 audacity \
 hardinfo \
+xbacklight \
+blueman \
 telegram-desktop
+
 
 # Fetch the Chrome binary and install it together with its dependencies
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -106,7 +112,7 @@ code --install-extension arcticicestudio.nord-visual-studio-code
 
 # CONFIGURE SYSTEM
 
-# Download and set theme
+# Download theme (set manually with lxappearance)
 wget https://github.com/EliverLara/Nordic/releases/download/v1.9.0/Nordic-darker.tar.xz
 mkdir /home/sami/.themes
 tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
