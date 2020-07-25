@@ -121,6 +121,7 @@ rm Nordic-darker.tar.xz
 # Setup directories
 mkdir -p /home/sami/.config/i3/
 mkdir -p /home/sami/.config/Code/User/
+mkdir -p /home/sami/.config/dunst
 rm -rf /home/sami/Templates
 rm -rf /home/sami/Public
 
@@ -131,6 +132,7 @@ ln -sf /home/sami/.files/rc/xresources /home/sami/.Xresources
 ln -sf /home/sami/.files/rc/i3 /home/sami/.config/i3/config
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
+ln -sf /home/sami/.files/rc/dunstrc /home/sami/.config/dunst/dunstrc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work

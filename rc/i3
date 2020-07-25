@@ -33,8 +33,9 @@ exec_always xss-lock /home/sami/.files/bin/i3lock.sh
 # start pulseaudio
 exec pulseaudio --start
 
-# desktop environment-independent system tray GUI for network-manager
+# start tray applets
 exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
 
 # use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
