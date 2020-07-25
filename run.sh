@@ -32,6 +32,7 @@ neofetch \
 unzip \
 htop \
 gimp \
+imagemagick \
 obs-studio \
 catimg \
 ccze \
@@ -56,6 +57,7 @@ poedit \
 influxdb-client \
 gcc \
 build-essential \
+cargo \
 python3 \
 python3-pip \
 flake8 \
@@ -95,6 +97,10 @@ vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 # Install vscode extensions
 code --install-extension arcticicestudio.nord-visual-studio-code
 
+# Install rust packages
+sudo cargo install exa
+sudo cargo install alacritty
+
 
 # CONFIGURE SYSTEM
 
@@ -104,15 +110,10 @@ mkdir /home/sami/.themes
 tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
 rm Nordic-darker.tar.xz
 
-# Remove unused home directories
-rm -rf /home/sami/Templates
-rm -rf /home/sami/Public
-
 # Setup directories
 mkdir -p /home/sami/.config/Code/User/
-mkdir /home/sami/.ssh
-chown sami /home/sami/.ssh
-chmod 700 /home/sami/.ssh
+rm -rf /home/sami/Templates
+rm -rf /home/sami/Public
 
 # Fetch and link dotfiles and configs
 ln -sf /home/sami/.files/pic/wallpaper.jpg /home/sami/.wallpaper.jpg
@@ -126,11 +127,6 @@ ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
 # Clone vundle and install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall > /dev/null
-
-# Copy keys
-cp /media/sami/key/edser /home/sami/.ssh/id_ed25519
-chmod 600 /home/sami/.ssh/id_ed25519
-ssh-add /home/sami/.ssh/id_ed25519
 
 # Add user to docker group
 sudo usermod -aG docker sami
