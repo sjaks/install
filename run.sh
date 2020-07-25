@@ -110,6 +110,10 @@ vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 # Install vscode extensions
 code --install-extension arcticicestudio.nord-visual-studio-code
 
+# Install mons
+cd /home/sami/Documents && git clone --recursive https://github.com/Ventto/mons.git
+cd mons/ && sudo make install && cd /home/sami/.files
+
 
 # CONFIGURE SYSTEM
 
@@ -145,7 +149,7 @@ ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall > /dev/null
 
-# Add user to docker group
+# Add user to groups
 sudo usermod -aG docker sami
 
 # Add systemd config
@@ -154,9 +158,6 @@ sudo systemctl daemon-reload
 sudo systemctl disable systemd-networkd-wait-online
 sudo systemctl mask systemd-networkd-wait-online
 
-# Install mons
-cd /home/sami/Documents && git clone --recursive https://github.com/Ventto/mons.git
-cd mons/ && sudo make install && cd /home/sami/.files
 
 # FINAL STEPS
 
