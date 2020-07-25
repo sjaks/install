@@ -12,7 +12,7 @@ These work on my machine but might not work on your without major modifications.
 6. Finish the install.
 
 ### Importing the dotfiles
-1. Import SSH keys and install git `sudo apt install git`.
+1. Import SSH keys.
 ```
 mkdir /home/sami/.ssh
 chown sami /home/sami/.ssh
@@ -21,7 +21,7 @@ cp /media/sami/key/edid /home/sami/.ssh/id_ed25519
 chmod 600 /home/sami/.ssh/id_ed25519
 ssh-add /home/sami/.ssh/id_ed25519
 ```
-2. Clone this repo: `cd ~ && git clone git@github.com/sjaks/.files.git.
+2. Clone this repo: `cd ~ && git clone git@github.com/sjaks/.files.git`.
 3. Make links to the dotfiles:
 ```
 mkdir -p /home/sami/.config/Code/User/
