@@ -10,8 +10,6 @@
 # an Ubuntu Gnome installation
 
 
-
-
 # INITIALIZE INSTALLATION
 
 # Define Nord colors
@@ -39,8 +37,6 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'fi')]"
 # Update the repositories and execute a full upgrade
 sudo apt -q update
 sudo apt -y -q dist-upgrade
-
-
 
 
 # CONFIGURE PACKAGES
@@ -115,13 +111,9 @@ sudo snap install spotify
 sudo snap install discord
 
 # Install debs
-if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "ok installed") -eq 0 ] ; then
-	# Fetch the Chrome binary and install it together with its dependencies
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo dpkg -i google-chrome-stable_current_amd64.deb
-	sudo apt -y install -f
-	rm google-chrome-stable_current_amd64.deb
-fi
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i /tmp/chrome.deb
+sudo apt -y install -f
 
 # Install vagrant plugins
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
@@ -132,8 +124,6 @@ code --install-extension arcticicestudio.nord-visual-studio-code
 # Remove Mozilla packages and default Gnome games
 sudo apt -y remove firefox thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
 rm -rf /home/sami/.mozilla
-
-
 
 
 # CONFIGURE POWER BEHAVIOR
@@ -150,8 +140,6 @@ gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 # Disable inactivity suspending
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
-
-
 
 
 # SET APPEARANCE SETTINGS
@@ -194,8 +182,6 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 
 
 
-
-
 # CONFIGURE KEYBOARD SHORTCUTS
 
 # Set a keyboard hotkey for closing a window
@@ -207,8 +193,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'gnome-terminal'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command '/usr/bin/gnome-terminal'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>Return'
-
-
 
 
 # DO ADDITIONAL CONFIGURATION
@@ -242,8 +226,6 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 sudo usermod -aG docker sami
 
 
-
-
 # CONFIGURE DIRECTORIES AND FILES
 
 # Remove unused home directories
@@ -259,33 +241,15 @@ chmod 700 /home/sami/.ssh
 # Fetch and link dotfiles and configs
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
-ln -sf /home/sami/.files/rc/atom /home/sami/.atom/config.cson
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 ln -sf /home/sami/.files/rc/hidden /home/sami/.hidden
 ln -sf /home/sami/.files/rc/code /home/sami/.config/Code/User/settings.json
 
-# Fetch new auto update config
-sudo cp /home/sami/.files/rc/20auto-upgrades /etc/apt/apt.conf.d/20auto-upgrades
-
 # Clone vundle and install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall > /dev/null
-
-# Copy keys
-cp /media/sami/key/edid /home/sami/.ssh/id_ed25519
-chmod 600 /home/sami/.ssh/id_ed25519
-ssh-add /home/sami/.ssh/id_ed25519
-
-# Remove temporary files
-rm -rf /home/sami/.cache/*
-rm /home/sami/.bash_history
-rm /home/sami/.python_history
-rm /home/sami/.viminfo
-rm /home/sami/.wget-hsts
-
-
 
 
 # FINAL STEPS
@@ -296,8 +260,6 @@ sudo ufw enable
 # Clear apt cache
 sudo apt -y autoclean
 sudo apt -y autoremove
-
-
 
 
 # FINISH

@@ -11,18 +11,11 @@
 # sjaks@github
 
 
-
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
 	*) return;;
 esac
-
-
-
-# Set GPG pass promt to TTY since WSL requires this.
-export GPG_TTY=$(tty)
-
 
 
 # Enable color support for ls, grep and gcc by default. For instance,
@@ -46,53 +39,6 @@ CY="$(tput setaf 3)"
 CW="$(tput sgr0)"
 
 
-
-# Helper function for extracting tarballs and other compressed
-# files that might require complicated command parameters.
-extract () {
-	if [ -f $1 ] ; then
-		case $1 in
-			*.tar.bz2)   tar xvjf $1    ;;
-			*.tar.gz)    tar xvzf $1    ;;
-			*.bz2)       bunzip2 $1     ;;
-			*.rar)       unrar x $1     ;;
-			*.gz)        gunzip $1      ;;
-			*.tar)       tar xvf $1     ;;
-			*.tbz2)      tar xvjf $1    ;;
-			*.tgz)       tar xvzf $1    ;;
-			*.zip)       unzip $1       ;;
-			*.Z)         uncompress $1  ;;
-			*.7z)        7z x $1        ;;
-			*)           echo "don't know how to extract '$1'..." ;;
-		esac
-	else
-		echo "'$1' is not a valid file!"
-	fi
-}
-
-
-
-# Helper function for clearing temporary files
-clear_cache () {
-	rm -rf /home/sami/.cache/*
-	rm /home/sami/.bash_history
-	rm /home/sami/.python_history
-	rm /home/sami/.viminfo
-	rm /home/sami/.wget-hsts
-	rm /home/sami/.gnuplot_history
-}
-
-
-
-# Helper function for updating and upgrading.
-full_upgrade () {
-	sudo apt update
-	sudo apt upgrade
-	sudo apt -y autoremove
-}
-
-
-
 # Show git info. Formats the branch name so that it looks
 # good in the bash promp: (•⎇  master). • is the symbol for
 # untracked changes in the current repo.
@@ -105,31 +51,34 @@ git_info () {
 }
 
 
+# Clear temporary files. Removes some common
+# cache and temp locations.
+clear_cache () {
+	rm -rf /home/sami/.cache/*
+	rm /home/sami/.bash_history
+	rm /home/sami/.python_history
+	rm /home/sami/.viminfo
+	rm /home/sami/.wget-hsts
+	rm /home/sami/.gnuplot_history
+	rm /home/sami/.node_repl_history
+}
+
 
 # Custom aliases
-alias reseteverything='rm -rf /home/sami/install && git clone https://github.com/sjaks/install /home/sami/install'
-alias vi='vim'
 alias ll='echo && ls -al | wc -l && echo && ls -alFh --group-directories-first'
 alias neofetch='neofetch --ascii_distro GNU'
-alias update='full_upgrade && clear_cache'
 alias getpass='openssl rand -base64 18'
 alias gitt='git log --oneline --all --graph'
-
 alias octave='cd ~/Documents && octave'
 alias curll='curl -IL'
-alias curlh='curl -I --http2'
 alias digg='dig ANY +noall +answer'
 alias digfi='dig +short all @a.fi'
 alias myip='curl ipinfo.io/ip'
-
 alias sersync="find * | entr rsync -avz -e 'ssh -q' * wp:/data/wordpress/htdocs/wp-content/mu-plugins/seravo-plugin/"
 
 tailc () { tail $@ | ccze -A ; }
 catc () { cat $@ | ccze -A ; }
 
 
-
-# Bash prompt with the following format:
-#    user@host:~(•⎇ branch)
-#    $
+# Bash prompt
 PS1='${CY}\u${CW}@${CG}\h${CW}:${CB}\w${CR}$(git_info)${CW}\n$ '
