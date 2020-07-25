@@ -30,6 +30,9 @@ font pango:Noto Mono 9
 # use loginctl lock-session to lock your screen.
 exec_always xss-lock /home/sami/.files/bin/i3lock.sh
 
+# start pulseaudio
+exec pulseaudio --start
+
 # desktop environment-independent system tray GUI for network-manager
 exec --no-startup-id nm-applet
 
@@ -174,3 +177,7 @@ bar {
 
 # set wallpaper
 exec_always feh --bg-fill /home/sami/.wallpaper.jpg
+
+# hide bars
+for_window [class="^.*"] border pixel 1
+new_window 1pixel
