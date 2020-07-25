@@ -8,12 +8,12 @@
 # BRIEF:
 # Personalized script for configuring
 # my Linux machines
+#
+# Major bug with LVM in the live server .iso:
+# https://askubuntu.com/questions/1106795/ubuntu-server-18-04-lvm-out-of-space-with-improper-default-partitioning
 
 
 # INITIALIZE INSTALLATION
-
-# Set the keyboard layout
-setxkbmap fi
 
 # Update the repositories and execute a full upgrade
 sudo apt -q update
