@@ -24,9 +24,13 @@ sudo apt -y -q dist-upgrade
 
 # Install packages with apt
 sudo apt -y -q install \
+xorg \
+xinit \
+dmenu \
 i3 \
 i3lock \
 i3status \
+network-manager-applet \
 ufw \
 neofetch \
 unzip \
@@ -57,7 +61,6 @@ poedit \
 influxdb-client \
 gcc \
 build-essential \
-cargo \
 python3 \
 python3-pip \
 flake8 \
@@ -82,24 +85,17 @@ audacity \
 hardinfo \
 telegram-desktop
 
-# Install debs
-if [ $(dpkg-query -W -f='${Status}' google-chrome-stable 2>/dev/null | grep -c "ok installed") -eq 0 ] ; then
-	# Fetch the Chrome binary and install it together with its dependencies
-	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-	sudo dpkg -i google-chrome-stable_current_amd64.deb
-	sudo apt -y install -f
-	rm google-chrome-stable_current_amd64.deb
-fi
+# Fetch the Chrome binary and install it together with its dependencies
+wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i /tmp/chrome.deb
+sudo apt -y install -f
+
 
 # Install vagrant plugins
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 
 # Install vscode extensions
 code --install-extension arcticicestudio.nord-visual-studio-code
-
-# Install rust packages
-sudo cargo install exa
-sudo cargo install alacritty
 
 
 # CONFIGURE SYSTEM
