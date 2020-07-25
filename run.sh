@@ -131,6 +131,10 @@ vim +PluginInstall +qall > /dev/null
 # Add user to docker group
 sudo usermod -aG docker sami
 
+# Add systemd config
+echo HandleLidSwitch=lock | sudo tee -a /etc/systemd/logind.conf
+sudo systemctl daemon-reload
+
 
 # FINAL STEPS
 
