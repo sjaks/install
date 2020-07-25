@@ -92,6 +92,10 @@ wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_
 sudo dpkg -i /tmp/chrome.deb
 sudo apt -y install -f
 
+# Install snaps
+sudo snap install code --classic
+sudo snap install spotify
+sudo snap install slack --classic
 
 # Install vagrant plugins
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
