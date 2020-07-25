@@ -4,7 +4,7 @@
     "explorer.confirmDelete": false,
     "workbench.colorTheme": "Nord",
     "window.menuBarVisibility": "hidden",
-    "editor.fontFamily": "Ubuntu Mono",
+    "editor.fontFamily": "Noto Mono",
     "editor.fontSize": 16,
     "workbench.preferredDarkColorTheme": "Nord",
     "workbench.tips.enabled": false,
