@@ -2,8 +2,9 @@
 These work on my machine but might not work on your without major modifications. Use them only as inspiration.
 
 There are scripts for installing these dotfiles for
-- Ubuntu with Gnome 3.36 (finished)
-- Ubuntu Server with i3 (WIP, experimental)
+- Ubuntu with Gnome 3.36 *(finished)*
+- Ubuntu Server with i3 *(WIP, experimental)*
+- WSL Ubuntu *(WIP, experimental)*
 
 ## Gnome notes
 
