@@ -1,13 +1,31 @@
 # i3 config file (v4)
 
+# define Nord colors
+set $nord0   #2E3440
+set $nord1   #3B4252
+set $nord2   #434C5E
+set $nord3   #4C566A
+set $nord4   #D8DEE9
+set $nord5   #E5E9F0
+set $nord6   #ECEFF4
+set $nord7   #8FBCBB
+set $nord8   #88C0D0
+set $nord9   #81A1C1
+set $nord10  #5E81AC
+set $nord11  #BF616A
+set $nord12  #D08770
+set $nord13  #EBCB8B
+set $nord14  #A3BE8C
+set $nord15  #B48EAD
+
 # set keymap
-setxkbmap fi
+exec_always setxkbmap fi
 
 # use super as the mod key
 set $mod Mod4
 
 # font for window titles. Will also be used by the bar
-font pango:monospace 8
+font pango:Noto Mono 9
 
 # use loginctl lock-session to lock your screen.
 exec_always xss-lock /home/sami/.files/bin/i3lock.sh
@@ -32,7 +50,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb '$nord0' -nf '$nord8' -sb '$nord2' -sf '$nord15' -fn 'noto mono-10'
 
 # lock screen
 bindsym $mod+l exec bash /home/sami/.files/bin/i3lock.sh
@@ -139,7 +157,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar
+# start i3bar to display a workspace bar
 bar {
         status_command i3status
+
+	colors {
+		background $nord0
+		statusline $nord8
+
+		focused_workspace  $nord3  $nord8
+		active_workspace   $nord3  $nord8
+		inactive_workspace $nord8  $nord3
+		urgent_workspace   $nord3  $nord15 
+	}
 }
+
+# set wallpaper
+exec_always feh --bg-fill /home/sami/.wallpaper.jpg

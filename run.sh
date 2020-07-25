@@ -31,6 +31,7 @@ i3 \
 i3lock \
 xss-lock \
 i3status \
+feh \
 network-manager-applet \
 ufw \
 neofetch \
