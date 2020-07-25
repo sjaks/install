@@ -107,6 +107,7 @@ tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
 rm Nordic-darker.tar.xz
 
 # Setup directories
+mkdir -p /home/sami/.config/i3/
 mkdir -p /home/sami/.config/Code/User/
 rm -rf /home/sami/Templates
 rm -rf /home/sami/Public
@@ -114,6 +115,7 @@ rm -rf /home/sami/Public
 # Fetch and link dotfiles and configs
 ln -sf /home/sami/.files/pic/wallpaper.jpg /home/sami/.wallpaper.jpg
 ln -sf /home/sami/.files/rc/xinitrc /home/sami/.xinitrc
+ln -sf /home/sami/.files/rc/i3 /home/sami/.config/i3/config
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
