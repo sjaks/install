@@ -117,6 +117,7 @@ rm -rf /home/sami/Public
 # Fetch and link dotfiles and configs
 ln -sf /home/sami/.files/pic/wallpaper.jpg /home/sami/.wallpaper.jpg
 ln -sf /home/sami/.files/rc/xinitrc /home/sami/.xinitrc
+ln -sf /home/sami/.files/rc/xresources /home/sami/.Xresources
 ln -sf /home/sami/.files/rc/i3 /home/sami/.config/i3/config
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
