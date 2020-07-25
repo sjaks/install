@@ -120,6 +120,8 @@ tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
 rm Nordic-darker.tar.xz
 
 # Setup directories
+mkdir /home/sami/Documents/
+mkdir /home/sami/Downloads/
 mkdir -p /home/sami/.config/i3/
 mkdir -p /home/sami/.config/Code/User/
 mkdir -p /home/sami/.config/dunst
@@ -151,6 +153,10 @@ echo HandleLidSwitch=lock | sudo tee -a /etc/systemd/logind.conf
 sudo systemctl daemon-reload
 sudo systemctl disable systemd-networkd-wait-online
 sudo systemctl mask systemd-networkd-wait-online
+
+# Install mons
+cd /home/sami/Documents && git clone --recursive https://github.com/Ventto/mons.git
+cd mons/ && sudo make install && cd /home/sami/.files
 
 # FINAL STEPS
 
