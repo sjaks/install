@@ -33,7 +33,7 @@ xss-lock \
 i3status \
 feh \
 dunst \
-network-manager-applet \
+network-manager-gnome \
 gnome-keyring \
 ufw \
 neofetch \
