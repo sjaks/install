@@ -24,6 +24,37 @@ chmod 600 /home/sami/.ssh/id_ed25519
 4. Clone this repo: `git clone git@github.com/sjaks/.files.git`.
 5. Run `./bin/gnome_install.sh`.
 
+### Additional theming
+
+#### Spotify
+In order to make Spotify follow the Nord GTK theme, Spicetify-CLI has to be used.
+1. Install Spotify using the official .deb:
+```
+snap remove spotify
+wget -O spotify.deb <http://repository.spotify.com/pool/non-free/s/spotify-client/>
+sudo dpkg -i spotify.deb
+sudo chmod a+wr /usr/share/spotify
+sudo chmod a+wr /usr/share/spotify/Apps -R
+```
+4. Install Spicetify:
+```
+curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+mv ~/spicetify-cli ~/.local/spicetify
+```
+3. Fetch the themes:
+```
+https://github.com/morpheusthewhite/spicetify-themes
+git clone https://github.com/morpheusthewhite/spicetify-themes.git
+cd spicetify-themes
+mkdir -p ~/.config/spicetify/Themes
+cp -r * ~/.config/spicetify/Themes
+```
+4. Set the theme:
+```
+./.local/spicetify/spicetify config current_theme Nord
+./.local/spicetify/spicetify apply
+```
+
 ## i3 notes
 
 ### Installing Ubuntu
