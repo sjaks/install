@@ -29,6 +29,7 @@ vim \
 curl \
 wget \
 mlocate \
+silversearcher-ag \
 git \
 net-tools \
 traceroute \
