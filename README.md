@@ -26,6 +26,14 @@ chmod 600 /home/sami/.ssh/id_ed25519
 
 ### Additional theming
 
+#### Shell theme
+Changing the Gnome shell theme automagically is not possible because to make changes, the user needs to logout.
+1. Install Gnome extensions `gnome-shell-extensions`.
+2. Enable `User themes` in `gnome-tweak-tool`.
+3. Log out and log back in.
+4. Change shell theme in `gnome-tweak-tool`.
+
+
 #### Spotify
 In order to make Spotify follow the Nord GTK theme, Spicetify-CLI has to be used.
 1. Install Spotify using the official .deb:
