@@ -39,6 +39,18 @@ CY="$(tput setaf 3)"
 CW="$(tput sgr0)"
 
 
+# Set history settings
+HISTCONTROL=ignoreboth
+shopt -s histappend
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+
+# Check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+
 # Show git info. Formats the branch name so that it looks
 # good in the bash promp: (•⎇  master). • is the symbol for
 # untracked changes in the current repo.
