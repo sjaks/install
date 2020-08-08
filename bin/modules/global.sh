@@ -25,6 +25,7 @@ unzip \
 htop \
 catimg \
 ccze \
+colordiff \
 vim \
 curl \
 wget \
