@@ -26,17 +26,29 @@ source /home/sami/.files/bin/modules/global.sh
 # INSTALL VERY SERVER SPECIFIC PACKAGES #
 #########################################
 
-sudo apt install nginx
-sudo systemctl enable nginx
+sudo apt install nginx \
+docker \
+docker-compose
 
 
 #######################################
 # CREATE LINKS TO IMPORTANT LOCATIONS #
 #######################################
 
-# Create links to Windows directories
 ln -sf /var/www /home/sami/www
 ln -sf /etc/nginx/sites-available/ /home/sami/nginx
+
+
+###############################
+# DO ADDITIONAL CONFIGURATION #
+###############################
+
+# Add user to docker group
+sudo usermod -aG docker sami
+
+# Enable services
+sudo systemctl enable nginx
+sudo systemctl enable docker
 
 
 ###############

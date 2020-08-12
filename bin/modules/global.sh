@@ -47,7 +47,6 @@ php \
 php-codesniffer \
 nodejs \
 npm \
-octave \
 rsync \
 entr \
 ncdu \
@@ -63,7 +62,6 @@ ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
-ln -sf /home/sami/.files/rc/gitconfig-work /home/sami/.gitconfig-work
 
 # Load vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
