@@ -5,6 +5,7 @@ There are scripts for installing these dotfiles for
 - Ubuntu with Gnome 3.36
 - Ubuntu Server with i3 *(WIP, experimental)*
 - WSL Ubuntu
+- Ubuntu Server (for server purposes)
 
 ## Gnome notes
 
@@ -91,3 +92,11 @@ chmod 600 /home/sami/.ssh/id_ed25519
 
 ## WSL notes
 There is a script for configuring a WSL Ubuntu installation. Clone this repo and execute `./bin/wsl_install.sh`.
+
+## Server installation notes
+N.B: This script doesn't fully set a server up. Remember to do some security configuration manually.
+
+### Some notes
+1. Upload public SSH key
+2. Disable root login
+3. Disable password login
