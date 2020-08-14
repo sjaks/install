@@ -50,6 +50,9 @@ sudo usermod -aG docker sami
 sudo systemctl enable nginx
 sudo systemctl enable docker
 
+# Disable motd
+touch /home/sami/.hushlogin
+
 
 ###############
 # FINAL STEPS #
