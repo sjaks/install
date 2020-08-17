@@ -30,9 +30,9 @@ chmod 600 /home/sami/.ssh/id_ed25519
 #### Shell theme
 Changing the Gnome shell theme automagically is not possible because to make changes, the user needs to logout.
 1. Install Gnome extensions `gnome-shell-extensions`.
-2. Enable `User themes` in `gnome-tweak-tool`.
-3. Log out and log back in.
-4. Change shell theme in `gnome-tweak-tool`.
+2. Reload Gnome Shell: `Alt+F2`, type `r` and press Enter.
+3. Enable `User themes` in `gnome-tweak-tool`.
+4. Restart `gnome-tweak-tool` and enable the shell theme.
 
 
 #### Spotify
