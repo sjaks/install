@@ -64,6 +64,10 @@ cp -r * ~/.config/spicetify/Themes
 ./.local/spicetify/spicetify apply
 ```
 
+#### Nord colors for Slack
+Use this theme string for Slack:
+`#2E3440,#3B4252,#88C0D0,#2E3440,#3B4252,#D8DEE9,#A3BE8C,#81A1C1`
+
 ## i3 notes
 
 ### Installing Ubuntu
