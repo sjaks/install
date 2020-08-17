@@ -23,6 +23,7 @@ obs-studio \
 shotcut \
 fonts-noto-color-emoji \
 pavucontrol \
+qt5-style-plugins \
 papirus-icon-theme \
 mesa-utils \
 scrot \
