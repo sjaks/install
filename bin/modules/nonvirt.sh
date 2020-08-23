@@ -47,15 +47,17 @@ steam \
 telegram-desktop \
 octave
 
-# Install snap packages used on actual PCs
-sudo snap install code --classic
-sudo snap install slack --classic
-sudo snap install spotify
-sudo snap install discord
-
 # Install debs
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -O /tmp/discord.deb https://discordapp.com/api/download?platform=linux&format=deb
+wget -O /tmp/code.deb https://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.48.0-1597304990_amd64.deb
+wget -O /tmp/spotify.deb http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.1.26.501.gbe11e53b-15_amd64.deb
+wget -O /tmp/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-4.8.0-amd64.deb
 sudo dpkg -i /tmp/chrome.deb
+sudo dpkg -i /tmp/discord.deb
+sudo dpkg -i /tmp/code.deb
+sudo dpkg -i /tmp/spotify.deb
+sudo dpkg -i /tmp/slack.deb
 sudo apt -y install -f
 
 # Install vagrant plugins

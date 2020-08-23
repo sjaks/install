@@ -13,6 +13,7 @@
 # Modules:
 #  - global
 #  - nonvirt
+#  - snap
 
 
 ###########################
@@ -51,6 +52,9 @@ source /home/sami/.files/bin/modules/global.sh
 
 # This is a GUI install on an actual PC
 source /home/sami/.files/bin/modules/nonvirt.sh
+
+# Get rid of snap
+source /home/sami/.files/bin/modules/snap.sh
 
 
 ######################

@@ -12,14 +12,18 @@
 #
 # Modules:
 #  - global
+#  - snap
 
 
 ###################
 # EXECUTE MODULES #
 ###################
 
-# Do global configuration only
+# Do global configuration
 source /home/sami/.files/bin/modules/global.sh
+
+# Get rid of snap
+source /home/sami/.files/bin/modules/snap.sh
 
 
 #########################################
