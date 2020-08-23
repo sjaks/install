@@ -21,7 +21,7 @@ sudo snap remove gnome-3-28-1804
 sudo snap remove core18
 
 # Remove snapd itself
-sudo apt purge snapd
+sudo apt -y purge snapd
 
 # Delete snap directories
 rm -rf ~/snap

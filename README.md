@@ -1,7 +1,7 @@
 # My Linux dotfiles and install scripts
 These work on my machine but might not work on your without major modifications. Use them only as inspiration.
 
-There are scripts for installing these dotfiles for
+There are scripts (`bin/`) for installing these dotfiles for
 - Ubuntu with the latest Gnome DE
 - WSL Ubuntu
 - Ubuntu Server
@@ -25,13 +25,6 @@ chmod 600 /home/sami/.ssh/id_ed25519
 5. Run `./bin/gnome_install.sh`.
 
 ### Additional theming
-
-#### Shell theme
-Changing the Gnome shell theme automagically is not possible because to make changes, the user needs to logout.
-1. After running the Gnome installer, reload Gnome Shell: `Alt+F2`, type `r` and press Enter.
-2. Enable `User themes` in `gnome-tweak-tool`.
-3. Restart `gnome-tweak-tool` and enable the shell theme.
-
 
 #### Spotify
 In order to make Spotify follow the Nord GTK theme, Spicetify-CLI has to be used.
@@ -57,4 +50,3 @@ cp -r * ~/.config/spicetify/Themes
 #### Nord colors for Slack
 Use this theme string for Slack:
 `#2E3440,#3B4252,#88C0D0,#2E3440,#3B4252,#D8DEE9,#A3BE8C,#81A1C1`
-
