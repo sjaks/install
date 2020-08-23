@@ -62,7 +62,8 @@ sudo apt -y -q install \
 gnome-tweak-tool \
 rhythmbox \
 gitg \
-gedit-plugins
+gedit-plugins \
+gnome-shell-extensions
 
 # Remove unneeded preinstalled things
 sudo apt -y remove firefox thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
