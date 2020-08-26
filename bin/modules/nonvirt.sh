@@ -31,6 +31,7 @@ texlive-latex-recommended \
 texlive-lang-european \
 poedit \
 ruby-dev \
+ruby-bundler \
 qt5-default \
 qtcreator \
 moreutils \
