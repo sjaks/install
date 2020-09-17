@@ -77,6 +77,19 @@ clear_cache () {
 }
 
 
+# Do basic maintenance to system. Syncs repos,
+# updates packages, removes some totally unnecessary
+# temp files and moves Downloads and screenshots to trash.
+daily () {
+        sudo apt update
+        sudo apt -y upgrade
+        clear_cache
+        mv /home/sami/Downloads/* /home/sami/.local/share/Trash/files
+        mv /home/sami/Pictures/Screenshot* /home/sami/.local/share/Trash/files
+        sudo apt -y autoremove
+}
+
+
 # Custom aliases
 alias ll='echo && ls -al | wc -l && echo && ls -alFh --group-directories-first'
 alias neofetch='neofetch --ascii_distro GNU'
