@@ -30,6 +30,8 @@ scrot \
 texlive-latex-recommended \
 texlive-lang-european \
 poedit \
+flake8 \
+php-codesniffer \
 ruby-dev \
 ruby-bundler \
 qt5-default \
