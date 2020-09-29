@@ -43,7 +43,6 @@ build-essential \
 python3 \
 python3-pip \
 flake8 \
-php \
 php-codesniffer \
 nodejs \
 npm \
