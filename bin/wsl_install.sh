@@ -27,7 +27,6 @@ source /home/sami/.files/bin/modules/global.sh
 ###########################
 
 # Create links to Windows directories
-ln -sf /mnt/c/Users/Sami/Code /home/sami/code
 ln -sf /mnt/c/Users/Sami/ /home/sami/win
 
 

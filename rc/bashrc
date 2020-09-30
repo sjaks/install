@@ -102,7 +102,6 @@ alias digfi='dig +short all @a.fi'
 alias myip='curl ipinfo.io/ip'
 alias dir='explorer.exe'
 alias c='clear'
-alias pipesh='bash <(curl -sL https://gist.github.com/sjaks/09f6bb144f961c9d6724202fd31eb058/raw)'
 alias sersync="find * | entr rsync -avz -e 'ssh -q' * wp:/data/wordpress/htdocs/wp-content/mu-plugins/seravo-plugin/"
 
 tailc () { tail $@ | ccze -A ; }
