@@ -8,25 +8,26 @@
 #
 # BRIEF:
 # Module for applying a theme for Spotify
-# TODO: test and fix, use in non-virt
 
 #################################
 # INSTALL SPICETIFY AND  THEMES #
 #################################
 
-curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
-mv ~/spicetify-cli ~/.local/spicetify
+sudo chmod a+wr /usr/share/spotify/
+sudo chmod a+wr /usr/share/spotify/Apps -R
 
-https://github.com/morpheusthewhite/spicetify-themes
+curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+mv  /home/sami/spicetify-cli ~/.local/spicetify
 git clone https://github.com/morpheusthewhite/spicetify-themes.git
-cd spicetify-themes
-mkdir -p ~/.config/spicetify/Themes
-cp -r * ~/.config/spicetify/Themes
+mkdir -p /home/sami/.local/spicetify/Themes
+mv spicetify-themes/* /home/sami/.local/spicetify/Themes/
+rm -rf spicetify-themes
+chmod +x /home/sami/.local/spicetify/spicetify 
 
 
 #############
 # SET THEME #
 #############
 
-./.local/spicetify/spicetify config current_theme Nord
-./.local/spicetify/spicetify apply
+/home/sami/.local/spicetify/spicetify config current_theme Nord
+/home/sami/.local/spicetify/spicetify backup apply
