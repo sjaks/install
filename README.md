@@ -1,5 +1,5 @@
 # My Linux dotfiles and install scripts
-These work on my machine but might not work on your without major modifications. Use them only as inspiration.
+These work on my machine but might not work on yours without major modifications. Use them only as inspiration.
 
 There are scripts (`bin/`) for installing these dotfiles for
 - Ubuntu with the latest Gnome DE
@@ -25,27 +25,6 @@ chmod 600 /home/sami/.ssh/id_ed25519
 5. Run `./bin/gnome_install.sh`.
 
 ### Additional theming
-
-#### Spotify
-In order to make Spotify follow the Nord GTK theme, Spicetify-CLI has to be used.
-1. Install Spicetify:
-```
-curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
-mv ~/spicetify-cli ~/.local/spicetify
-```
-2. Fetch the themes:
-```
-https://github.com/morpheusthewhite/spicetify-themes
-git clone https://github.com/morpheusthewhite/spicetify-themes.git
-cd spicetify-themes
-mkdir -p ~/.config/spicetify/Themes
-cp -r * ~/.config/spicetify/Themes
-```
-3. Set the theme:
-```
-./.local/spicetify/spicetify config current_theme Nord
-./.local/spicetify/spicetify apply
-```
 
 #### Nord colors for Slack
 Use this theme string for Slack:
