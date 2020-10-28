@@ -20,6 +20,7 @@ sudo apt -y -q dist-upgrade
 
 # Install global packages used on all machines
 sudo apt -y -q install \
+liquidprompt \
 neofetch \
 unzip \
 htop \
@@ -56,9 +57,15 @@ cowsay
 
 # Fetch and link global dotfiles and configs
 ln -sf /home/sami/.files/rc/bashrc /home/sami/.bashrc
+ln -sf /home/sami/.files/rc/liquidpromptrc /home/sami/.liquidpromptrc
 ln -sf /home/sami/.files/rc/vimrc /home/sami/.vimrc
 ln -sf /home/sami/.files/rc/profile /home/sami/.profile
 ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
+
+# Link the bare minimum dotfiles for the root user
+sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
+sudo ln -sf /home/sami/.files/rc/liquidpromptrc /root/.liquidpromptrc
+sudo ln -sf /home/sami/.files/rc/vimrc /root/.vimrc
 
 # Load vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

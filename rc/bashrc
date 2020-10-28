@@ -18,7 +18,7 @@ case $- in
 esac
 
 
-# Enable color support for ls, grep and gcc by default. For instance,
+# Enable color support for ls, grep, cat, tail and gcc. For instance,
 # directories can be told apart from regular files more easily since
 # they are colored blue. Grep will also use color to highlight certain
 # parts of the output.
@@ -28,15 +28,11 @@ if [ -x /usr/bin/dircolors ]; then
 	alias grep='grep --color=auto'
 	alias fgrep='fgrep --color=auto'
 	alias egrep='egrep --color=auto'
+	tailc () { tail $@ | ccze -A ; }
+	catc () { cat $@ | ccze -A ; }
 fi
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-CR="$(tput setaf 1)"
-CG="$(tput setaf 2)"
-CB="$(tput setaf 6)"
-CY="$(tput setaf 3)"
-CW="$(tput sgr0)"
 
 
 # Set history settings
@@ -49,18 +45,6 @@ HISTFILESIZE=2000
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-
-# Show git info. Formats the branch name so that it looks
-# good in the bash promp: (•⎇  master). • is the symbol for
-# untracked changes in the current repo.
-git_info () {
-	branch_name=$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | tr -d '\n')
-
-	if [ ! -z "$branch_name" ]; then
-		echo "(${untracked}⎇  ${branch_name})"
-	fi
-}
 
 
 # Clear temporary files. Removes some common
@@ -81,12 +65,12 @@ clear_cache () {
 # updates packages, removes some totally unnecessary
 # temp files and moves Downloads and screenshots to trash.
 daily () {
-        sudo apt update
-        sudo apt -y upgrade
-        clear_cache
-        mv /home/sami/Downloads/* /home/sami/.local/share/Trash/files
-        mv /home/sami/Pictures/Screenshot* /home/sami/.local/share/Trash/files
-        sudo apt -y autoremove
+	sudo apt update
+	sudo apt -y upgrade
+	clear_cache
+	mv /home/sami/Downloads/* /home/sami/.local/share/Trash/files
+	mv /home/sami/Pictures/Screenshot* /home/sami/.local/share/Trash/files
+	sudo apt -y autoremove
 }
 
 
@@ -104,9 +88,6 @@ alias dir='explorer.exe'
 alias c='clear'
 alias sersync="find * | entr rsync -avz -e 'ssh -q' * wp:/data/wordpress/htdocs/wp-content/mu-plugins/seravo-plugin/"
 
-tailc () { tail $@ | ccze -A ; }
-catc () { cat $@ | ccze -A ; }
-
 
 # Bash completion
 if ! shopt -oq posix; then
@@ -118,5 +99,5 @@ if ! shopt -oq posix; then
 fi
 
 
-# Bash prompt
-PS1='${CY}\u${CW}@${CG}\h${CW}:${CB}\w${CR}$(git_info)${CW}\n$ '
+# Load LiquidPrompt
+echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
