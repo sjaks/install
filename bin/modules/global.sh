@@ -65,7 +65,6 @@ ln -sf /home/sami/.files/rc/gitconfig /home/sami/.gitconfig
 # Link the bare minimum dotfiles for the root user
 sudo ln -sf /home/sami/.files/rc/bashrc /root/.bashrc
 sudo ln -sf /home/sami/.files/rc/liquidpromptrc /root/.liquidpromptrc
-sudo ln -sf /home/sami/.files/rc/vimrc /root/.vimrc
 
 # Load vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
