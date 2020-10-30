@@ -18,10 +18,18 @@ case $- in
 esac
 
 
-# Enable color support for ls, grep, cat, tail and gcc. For instance,
-# directories can be told apart from regular files more easily since
-# they are colored blue. Grep will also use color to highlight certain
-# parts of the output.
+# Define colors
+TERRED="$(tput setaf 1)"
+TERGREEN="$(tput setaf 2)"
+TERYELLOW="$(tput setaf 3)"
+TERBLUE="$(tput setaf 4)"
+TERMAGENTA="$(tput setaf 5)"
+TERCYAN="$(tput setaf 6)"
+TERWHITE="$(tput setaf 7)"
+TERNOCOL="$(tput sgr0)"
+
+
+# Enable color support for ls, grep, cat, tail and gcc
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 	alias ls='ls --color=auto'
@@ -100,5 +108,41 @@ if ! shopt -oq posix; then
 fi
 
 
-# Load LiquidPrompt
-echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
+# Bash prompt
+PROMPT_COMMAND=__tercommand
+
+__tercommand() {
+    local EXIT="$?"
+	local BRANCH=$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | tr -d '\n')
+
+    PS1="${TERGREEN}\u"           # username
+	PS1+="${TERNOCOL}@"           # separator
+
+	# hostname
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+		PS1+="${TERCYAN}\h"
+	else
+		PS1+="${TERBLUE}\h"
+	fi
+
+	# write permission colon
+	if [ -w . ]; then
+		PS1+="${TERGREEN}:${TERNOCOL}"
+	else
+		PS1+="${TERRED}:${TERNOCOL}"
+	fi
+
+	PS1+="${TERYELLOW}\w"         # working dir
+
+	# git branch
+	if [ ! -z "$BRANCH" ]; then
+		PS1+=" ${TERRED}(${BRANCH})${TERNOCOL}"	
+	fi
+
+	# exit code
+	if [ $EXIT != 0 ]; then
+        PS1+=" ${TERMAGENTA}${EXIT}${TERNOCOL}"
+	fi
+
+	PS1+="${TERNOCOL} \$ "        # prompt sign
+}
