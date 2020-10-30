@@ -35,14 +35,6 @@ docker \
 docker-compose
 
 
-#######################################
-# CREATE LINKS TO IMPORTANT LOCATIONS #
-#######################################
-
-ln -sf /var/www /home/sami/www
-ln -sf /etc/nginx/sites-available/ /home/sami/nginx
-
-
 ###############################
 # DO ADDITIONAL CONFIGURATION #
 ###############################
