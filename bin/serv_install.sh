@@ -30,7 +30,7 @@ source /home/sami/.files/bin/modules/snap.sh
 # INSTALL VERY SERVER SPECIFIC PACKAGES #
 #########################################
 
-sudo apt install nginx \
+sudo apt install -y nginx \
 docker \
 docker-compose
 
