@@ -19,14 +19,14 @@ esac
 
 
 # Define colors
-TERRED="$(tput setaf 1)"
-TERGREEN="$(tput setaf 2)"
-TERYELLOW="$(tput setaf 3)"
-TERBLUE="$(tput setaf 4)"
-TERMAGENTA="$(tput setaf 5)"
-TERCYAN="$(tput setaf 6)"
-TERWHITE="$(tput setaf 7)"
-TERNOCOL="$(tput sgr0)"
+TERRED="\[\033[0;31m\]"
+TERGREEN="\[\033[0;32m\]"
+TERYELLOW="\[\033[0;33m\]"
+TERBLUE="\[\033[0;34m\]"
+TERMAGENTA="\[\033[0;35m\]"
+TERCYAN="\[\033[0;36m\]"
+TERWHITE="\[\033[0;37m\]"
+TERNOCOL="\[\033[0m\]"
 
 
 # Enable color support for ls, grep, cat, tail and gcc
