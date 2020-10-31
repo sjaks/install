@@ -111,6 +111,10 @@ fi
 # Bash prompt
 PROMPT_COMMAND=__tercommand
 
+# Trim working directory print
+export PROMPT_DIRTRIM=1
+
+# Build PS1 prompt
 __tercommand() {
     local EXIT="$?"
 	local BRANCH=$(git branch 2>/dev/null | grep "^*" | colrm 1 2 | tr -d '\n')
