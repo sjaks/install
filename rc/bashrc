@@ -83,7 +83,7 @@ daily () {
 
 
 # Custom aliases
-alias ll='echo && ls -al | wc -l && echo && ls -alFh --group-directories-first'
+alias ll='echo -n "count " && ls -1A | wc -l && ls -alFh --group-directories-first'
 alias neofetch='neofetch --ascii_distro GNU'
 alias getpass='openssl rand -base64 18'
 alias gitt='git log --oneline --all --graph'
