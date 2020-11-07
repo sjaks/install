@@ -55,6 +55,10 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 
+# Allow changing directories by just typing in their names.
+shopt -s autocd
+
+
 # Clear temporary files. Removes some common
 # cache and temp locations.
 clear_cache () {
