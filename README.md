@@ -21,7 +21,7 @@ chmod 700 /home/sami/.ssh
 chmod 600 /home/sami/.ssh/id_ed25519
 ```
 3. Install git: `sudo apt install git`.
-4. Clone this repo: `git clone git@github.com/sjaks/.files.git`.
+4. Clone this repo: `git clone --recursive git@github.com/sjaks/.files.git`.
 5. Run `./bin/gnome_install.sh`.
 
 ### Additional theming

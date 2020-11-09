@@ -74,11 +74,10 @@ code --install-extension arcticicestudio.nord-visual-studio-code
 # SET APPEARANCE SETTINGS #
 ###########################
 
-# Fetch the GTK theme
-wget https://github.com/EliverLara/Nordic/releases/download/v1.9.0/Nordic-darker.tar.xz
+# Link the GTK theme
+
 mkdir /home/sami/.themes
-tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
-rm Nordic-darker.tar.xz
+ln -sf /home/sami/.files/bin/remotes/nordic /home/sami/.themes/Nordic-darker
 
 
 ###########################

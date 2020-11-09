@@ -1,0 +1,3 @@
+[submodule "bin/remotes/nordic"]
+	path = bin/remotes/nordic
+	url = https://github.com/EliverLara/Nordic
