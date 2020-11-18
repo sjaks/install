@@ -114,6 +114,8 @@ fi
 
 # Bash prompt
 PROMPT_COMMAND=__tercommand
+PROMPT_COMMAND="echo -ne '\033]2;Terminal: ${HOSTNAME}\007';$PROMPT_COMMAND"
+PROMPT_COMMAND="history -a; history -c; history -r;$PROMPT_COMMAND"
 
 # Trim working directory print
 export PROMPT_DIRTRIM=1
