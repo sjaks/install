@@ -99,6 +99,7 @@ alias myip='curl ipinfo.io/ip'
 alias dir='explorer.exe'
 alias sus='sudo -E su'
 alias c='clear'
+alias apps='apt list --installed | grep -v automatic'
 alias sersync="find * | entr rsync -avz -e 'ssh -q' * wp:/data/wordpress/htdocs/wp-content/mu-plugins/seravo-plugin/"
 
 
