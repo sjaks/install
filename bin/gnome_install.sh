@@ -74,7 +74,7 @@ gedit-plugins \
 gnome-shell-extensions
 
 # Remove unneeded preinstalled things
-sudo apt -y remove firefox thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
+sudo apt -y remove firefox firefox-locale-en thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
 rm -rf /home/sami/.mozilla
 
 
