@@ -86,6 +86,10 @@ daily () {
 }
 
 
+# Add ~/.local/bin to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+
 # Custom aliases
 alias ll='echo -n "count " && ls -1A | wc -l && ls -alFh --group-directories-first'
 alias neofetch='neofetch --ascii_distro GNU'
