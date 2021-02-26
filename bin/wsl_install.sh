@@ -27,7 +27,7 @@ source /home/sami/.files/bin/modules/global.sh
 ############
 
 # Create links to Windows directories
-ln -sf /mnt/c/Users/Sami/ /home/sami/win
+ln -sf /mnt/d/Code /home/sami/code
 
 # Disable motd
 touch /home/sami/.hushlogin
