@@ -21,21 +21,6 @@
 # INITIALIZE INSTALLATION #
 ###########################
 
-# Define Nord colors
-nord0="#2E3440"
-nord1="#3B4252"
-nord3="#4C566A"
-nord4="#D8DEE9"
-nord5="#E5E9F0"
-nord6="#ECEFF4"
-nord7="#8FBCBB"
-nord8="#88C0D0"
-nord9="#81A1C1"
-nord11="#BF616A"
-nord13="#EBCB8B"
-nord14="#A3BE8C"
-nord15="#B48EAD"
-
 # Reload all dconf settings
 dconf reset -f /
 
@@ -100,8 +85,9 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 ###########################
 
 # Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Nordic-darker'
+gsettings set org.gnome.desktop.interface gtk-theme 'Arc'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
+dconf write /org/gnome/terminal/legacy/theme-variant "'light'"
 
 # Set dock settings
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
@@ -124,14 +110,14 @@ profile=${profile:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors true
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['$nord1', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord8', '$nord5', '$nord3', '$nord11', '$nord14', '$nord13', '$nord9', '$nord15', '$nord7', '$nord6']"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#262b36', '#9c3528', '#61bc3b', '#f3b43a', '#0d68a8', '#744560', '#288e9c', '#a2a2a2', '#2f343f', '#d64937', '#86df5d', '#fdd75a', '#0f75bd', '#9e5e83', '#37c3d6', '#f9f9f9']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 
 # Change shell theme
 killall -3 gnome-shell
 gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com']"
 killall -3 gnome-shell
-gsettings set org.gnome.shell.extensions.user-theme name "Nordic-darker"
+gsettings set org.gnome.shell.extensions.user-theme name "Arc-Dark"
 
 ################################
 # CONFIGURE KEYBOARD SHORTCUTS #

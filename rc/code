@@ -2,7 +2,6 @@
     "python.pythonPath": "/usr/bin/python3",
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
-    "workbench.colorTheme": "Nord",
     "window.menuBarVisibility": "hidden",
     "editor.fontFamily": "Ubuntu Mono",
     "editor.fontSize": 16,
@@ -16,5 +15,7 @@
     "update.showReleaseNotes": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Arc+ (Light)",
+    "workbench.statusBar.visible": false
 }

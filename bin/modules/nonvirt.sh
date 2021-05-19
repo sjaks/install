@@ -48,7 +48,8 @@ audacity \
 hardinfo \
 steam \
 telegram-desktop \
-octave
+octave \
+arc-theme
 
 # Install debs
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -67,18 +68,7 @@ sudo apt -y install -f
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 
 # Install vscode extensions
-code --install-extension arcticicestudio.nord-visual-studio-code
-
-
-###########################
-# SET APPEARANCE SETTINGS #
-###########################
-
-# Fetch the GTK theme
-wget https://github.com/EliverLara/Nordic/releases/download/v1.9.0/Nordic-darker.tar.xz
-mkdir /home/sami/.themes
-tar -xvf Nordic-darker.tar.xz -C /home/sami/.themes/
-rm Nordic-darker.tar.xz
+code --install-extension ph-hawkins.arc-plus
 
 
 ###########################
