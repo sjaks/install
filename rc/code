@@ -16,6 +16,7 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Arc+ (Light)",
-    "workbench.statusBar.visible": false
+    "workbench.statusBar.visible": false,
+    "workbench.colorTheme": "Gnome Light (GitHub)",
+    "workbench.startupEditor": "none"
 }

@@ -85,7 +85,7 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 ###########################
 
 # Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Arc'
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
 dconf write /org/gnome/terminal/legacy/theme-variant "'light'"
 
@@ -117,7 +117,7 @@ gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/prof
 killall -3 gnome-shell
 gsettings set org.gnome.shell enabled-extensions "['user-theme@gnome-shell-extensions.gcampax.github.com']"
 killall -3 gnome-shell
-gsettings set org.gnome.shell.extensions.user-theme name "Arc-Dark"
+gsettings set org.gnome.shell.extensions.user-theme name ''
 
 ################################
 # CONFIGURE KEYBOARD SHORTCUTS #

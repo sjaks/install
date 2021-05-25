@@ -48,8 +48,7 @@ audacity \
 hardinfo \
 steam \
 telegram-desktop \
-octave \
-arc-theme
+octave
 
 # Install debs
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -68,7 +67,7 @@ sudo apt -y install -f
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 
 # Install vscode extensions
-code --install-extension ph-hawkins.arc-plus
+code --install-extension olifink.fedora-gnome-light-dark
 
 
 ###########################
