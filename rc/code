@@ -17,6 +17,6 @@
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
     "workbench.statusBar.visible": false,
-    "workbench.colorTheme": "Gnome Light (GitHub)",
+    "workbench.colorTheme": "Dracula",
     "workbench.startupEditor": "none"
 }

@@ -29,5 +29,5 @@ chmod +x /home/sami/.local/spicetify/spicetify
 # SET THEME #
 #############
 
-/home/sami/.local/spicetify/spicetify config current_theme Nord
+/home/sami/.local/spicetify/spicetify config current_theme Dracula
 /home/sami/.local/spicetify/spicetify backup apply

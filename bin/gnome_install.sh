@@ -56,7 +56,8 @@ gnome-tweak-tool \
 rhythmbox \
 gitg \
 gedit-plugins \
-gnome-shell-extensions
+gnome-shell-extensions \
+dconf-cli
 
 # Remove unneeded preinstalled things
 sudo apt -y remove firefox firefox-locale-en thunderbird aisleriot gnome-mahjongg gnome-mines gnome-sudoku
@@ -84,10 +85,17 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 # SET APPEARANCE SETTINGS #
 ###########################
 
+# Fetch and install GTK theme
+mkdir /home/sami/.themes
+wget -O /tmp/dracula.zip https://github.com/dracula/gtk/archive/master.zip
+unzip /tmp/dracula.zip -d /home/sami/.themes
+mv /home/sami/.themes/gtk-master/ /home/sami/.themes/Dracula
+
 # Set themes
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+gsettings set org.gnome.desktop.interface gtk-theme 'Dracula'
+gsettings set org.gnome.shell.extensions.user-theme name 'Dracula'
 gsettings set org.gnome.desktop.interface icon-theme 'Papirus'
-dconf write /org/gnome/terminal/legacy/theme-variant "'light'"
+dconf write /org/gnome/terminal/legacy/theme-variant "'dark'"
 
 # Set dock settings
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 36
@@ -110,7 +118,7 @@ profile=${profile:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors true
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#262b36', '#9c3528', '#61bc3b', '#f3b43a', '#0d68a8', '#744560', '#288e9c', '#a2a2a2', '#2f343f', '#d64937', '#86df5d', '#fdd75a', '#0f75bd', '#9e5e83', '#37c3d6', '#f9f9f9']"
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#262626', '#E356A7', '#42E66C', '#E4F34A', '#9B6BDF', '#E64747', '#75D7EC', '#EFA554', '#7A7A7A', '#FF79C6', '#50FA7B', '#F1FA8C', '#BD93F9', '#FF5555', '#8BE9FD', '#FFB86C']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 
 # Change shell theme
