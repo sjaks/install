@@ -69,6 +69,7 @@ clear_cache () {
 	rm /home/sami/.gnuplot_history
 	rm /home/sami/.node_repl_history
 	rm /home/sami/.php_history
+	rm /home/sami/.octave_hist
 }
 
 
