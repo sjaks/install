@@ -1,13 +1,5 @@
-#!/bin/bash
-#       _       _
-#  ___ (_) __ _| | _____  sjaks@github
-# / __|| |/ _` | |/ / __| jaks.fi
-# \__ \| | (_| |   <\__ \ ------------
-# |___// |\__,_|_|\_\___/ .files
-#    |__/
-#
-# BRIEF:
-# Module for applying a theme for Spotify
+# .files
+# sjaks@github.com
 
 #################################
 # INSTALL SPICETIFY AND  THEMES #

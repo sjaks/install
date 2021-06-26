@@ -1,20 +1,5 @@
-#!/bin/bash
-#       _       _
-#  ___ (_) __ _| | _____  sjaks@github
-# / __|| |/ _` | |/ / __| jaks.fi
-# \__ \| | (_| |   <\__ \ ------------
-# |___// |\__,_|_|\_\___/ .files
-#    |__/
-#
-# BRIEF:
-# Personalized script for configuring
-# an Ubuntu Gnome installation
-#
-# Modules:
-#  - global
-#  - nonvirt
-#  - snap
-#  - spotify
+# .files
+# sjaks@github.com
 
 
 ###########################
@@ -117,7 +102,7 @@ profile=$(gsettings get org.gnome.Terminal.ProfilesList default)
 profile=${profile:1:-1}
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-columns 150
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" default-size-rows 45
-gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors true
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-theme-colors false
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" palette "['#262626', '#E356A7', '#42E66C', '#E4F34A', '#9B6BDF', '#E64747', '#75D7EC', '#EFA554', '#7A7A7A', '#FF79C6', '#50FA7B', '#F1FA8C', '#BD93F9', '#FF5555', '#8BE9FD', '#FFB86C']"
 gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" scrollbar-policy "never"
 

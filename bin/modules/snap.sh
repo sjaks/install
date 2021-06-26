@@ -1,13 +1,5 @@
-#!/bin/bash
-#       _       _
-#  ___ (_) __ _| | _____  sjaks@github
-# / __|| |/ _` | |/ / __| jaks.fi
-# \__ \| | (_| |   <\__ \ ------------
-# |___// |\__,_|_|\_\___/ .files
-#    |__/
-#
-# BRIEF:
-# Module for completely removing snapd
+# .files
+# sjaks@github.com
 
 ###################
 # GET RID OF SNAP #

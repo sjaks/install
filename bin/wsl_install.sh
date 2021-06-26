@@ -1,17 +1,5 @@
-#!/bin/bash
-#       _       _
-#  ___ (_) __ _| | _____  sjaks@github
-# / __|| |/ _` | |/ / __| jaks.fi
-# \__ \| | (_| |   <\__ \ ------------
-# |___// |\__,_|_|\_\___/ .files
-#    |__/
-#
-# BRIEF:
-# Personalized script for configuring
-# WSL Ubuntu
-#
-# Modules:
-#  - global
+# .files
+# sjaks@github.com
 
 
 ###################
