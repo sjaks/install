@@ -45,8 +45,8 @@ octave
 # Install debs
 wget -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget -O /tmp/discord.deb https://discordapp.com/api/download?platform=linux&format=deb
-wget -O /tmp/code.deb https://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.48.0-1597304990_amd64.deb
-wget -O /tmp/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-4.8.0-amd64.deb
+wget -O /tmp/code.deb https://packages.microsoft.com/repos/vscode/pool/main/c/code/code_1.58.2-1626302803_amd64.deb
+wget -O /tmp/slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-4.17.0-amd64.deb
 sudo dpkg -i /tmp/chrome.deb
 sudo dpkg -i /tmp/discord.deb
 sudo dpkg -i /tmp/code.deb
