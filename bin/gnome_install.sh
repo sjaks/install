@@ -27,9 +27,6 @@ source /home/sami/.files/bin/modules/nonvirt.sh
 # Get rid of snap
 source /home/sami/.files/bin/modules/snap.sh
 
-# Set Spotify theme
-source /home/sami/.files/bin/modules/spotify.sh
-
 
 ######################
 # CONFIGURE PACKAGES #
