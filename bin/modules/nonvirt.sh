@@ -53,12 +53,6 @@ sudo dpkg -i /tmp/code.deb
 sudo dpkg -i /tmp/slack.deb
 sudo apt -y install -f
 
-# Install Spotify
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt update
-sudo apt install spotify-client
-
 # Install vagrant plugins
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 
