@@ -57,7 +57,13 @@ sudo apt -y install -f
 vagrant plugin install vagrant-hostsupdater vagrant-bindfs
 
 # Install vscode extensions
-code --install-extension olifink.fedora-gnome-light-dark
+code --install-extension dracula-theme.theme-dracula
+code --install-extension ms-python.python
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.vscode-typescript-next
+code --install-extension ecmel.vscode-html-css
+code --install-extension ms-azuretools.vscode-docker
 
 
 ###########################

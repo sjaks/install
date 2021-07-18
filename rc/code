@@ -5,7 +5,7 @@
     "window.menuBarVisibility": "hidden",
     "editor.fontFamily": "Ubuntu Mono",
     "editor.fontSize": 16,
-    "workbench.preferredDarkColorTheme": "Nord",
+    "workbench.preferredDarkColorTheme": "Dracula",
     "workbench.tips.enabled": false,
     "workbench.tree.indent": 4,
     "editor.rulers": [
